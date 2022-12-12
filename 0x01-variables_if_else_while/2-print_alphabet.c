@@ -1,28 +1,18 @@
 #include <stdio.h>
+#include <ctype.h>
 /**
-*main - Prints all combinations of two digits with,
-* and space followed by new line
+*main - Program to print alphabet letter followed by new line
 *
-*Return: returns 0
+*Return: return 0
 */
 int main(void)
 {
-	int digit1, digit2;
-
-	for (digit1 = 0; digit1 < 9; digit1++)
+	int letter;
+	
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
-		{
-
-			putchar((digit1 % 10) + '0');
-			putchar((digit2 % 10) + '0');
-
-			if (digit1 == 8 && digit2 == 9)
-				continue;
-
-			putchar(',');
-			putchar(' ');
-		}
+		letter = tolower(letter);
+		putchar(letter);
 	}
 	putchar('\n');
 	return (0);
